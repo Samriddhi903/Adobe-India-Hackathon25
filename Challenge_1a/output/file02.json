@@ -1,135 +1,192 @@
 {
-  "title": "Foundation Level Extensions Overview",
+  "title": "Overview Foundation Level Extensions",
   "outline": [
     {
       "level": "H1",
-      "text": "Overview",
-      "page": 1
-    },
-    {
-      "level": "H2",
       "text": "International Software Testing Qualifications Board",
-      "page": 1
+      "page": 0,
+      "bbox": [
+        103.34,
+        306.284,
+        513.4160000000002,
+        324.284
+      ]
     },
     {
-      "level": "H3",
-      "text": "Version 1.0",
-      "page": 1
-    },
-    {
-      "level": "H2",
+      "level": "H1",
       "text": "Revision History",
-      "page": 3
+      "page": 2,
+      "bbox": [
+        70.944,
+        665.31628,
+        201.52872,
+        681.27628
+      ]
     },
     {
-      "level": "H3",
-      "text": "Version",
-      "page": 3
-    },
-    {
-      "level": "H3",
-      "text": "Remarks",
-      "page": 3
-    },
-    {
-      "level": "H3",
-      "text": "4. References",
-      "page": 4
-    },
-    {
-      "level": "H3",
-      "text": "3. Overview of the Foundation Level Extension – Agile Tester Syllabus",
-      "page": 4
-    },
-    {
-      "level": "H3",
-      "text": "Introduction to Foundation Level Agile Tester Extension",
-      "page": 4
-    },
-    {
-      "level": "H3",
-      "text": "Introduction to the Foundation Level Extensions",
-      "page": 4
-    },
-    {
-      "level": "H3",
+      "level": "H1",
       "text": "Table of Contents",
-      "page": 4
+      "page": 3,
+      "bbox": [
+        70.944,
+        665.31628,
+        208.75859999999997,
+        681.27628
+      ]
     },
     {
-      "level": "H2",
+      "level": "H1",
       "text": "Acknowledgements",
-      "page": 5
+      "page": 4,
+      "bbox": [
+        70.944,
+        665.31628,
+        213.73812,
+        681.27628
+      ]
     },
     {
-      "level": "H2",
-      "text": "2.3 Learning Objectives",
-      "page": 7
+      "level": "H1",
+      "text": "1. Introduction to the Foundation Level Extensions",
+      "page": 5,
+      "bbox": [
+        70.94399999999999,
+        611.59084,
+        543.9722879999996,
+        667.2362800000001
+      ]
     },
     {
-      "level": "H2",
-      "text": "2.2 Career Paths for Testers",
-      "page": 7
+      "level": "H1",
+      "text": "2. Introduction to Foundation Level Agile Tester Extension",
+      "page": 6,
+      "bbox": [
+        70.94399999999999,
+        588.66292,
+        544.0918079999999,
+        667.2362800000001
+      ]
     },
     {
       "level": "H2",
       "text": "2.1 Intended Audience",
-      "page": 7
+      "page": 6,
+      "bbox": [
+        70.944,
+        559.03372,
+        218.716404,
+        573.0737200000001
+      ]
     },
     {
       "level": "H2",
-      "text": "2.5 Structure and Course Duration",
-      "page": 8
+      "text": "2.2 Career Paths for Testers",
+      "page": 6,
+      "bbox": [
+        70.944,
+        291.86372,
+        255.16284000000002,
+        305.90371999999996
+      ]
+    },
+    {
+      "level": "H2",
+      "text": "2.3 Learning Objectives",
+      "page": 6,
+      "bbox": [
+        70.944,
+        162.71372,
+        225.596004,
+        176.75372000000002
+      ]
     },
     {
       "level": "H2",
       "text": "2.4 Entry Requirements",
-      "page": 8
+      "page": 7,
+      "bbox": [
+        70.944,
+        619.3937199999999,
+        225.6297,
+        633.43372
+      ]
     },
     {
-      "level": "H3",
-      "text": "Syllabus",
-      "page": 8
-    },
-    {
-      "level": "H3",
-      "text": "Days",
-      "page": 8
+      "level": "H2",
+      "text": "2.5 Structure and Course Duration",
+      "page": 7,
+      "bbox": [
+        70.944,
+        559.2737199999999,
+        291.9490440000001,
+        573.31372
+      ]
     },
     {
       "level": "H2",
       "text": "2.6 Keeping It Current",
-      "page": 9
-    },
-    {
-      "level": "H2",
-      "text": "3.2 Content",
-      "page": 10
+      "page": 8,
+      "bbox": [
+        70.944,
+        642.43372,
+        215.51949600000006,
+        656.4737200000001
+      ]
     },
     {
       "level": "H2",
       "text": "3.1 Business Outcomes",
-      "page": 10
+      "page": 9,
+      "bbox": [
+        70.944,
+        588.43372,
+        226.28256,
+        602.4737200000001
+      ]
     },
     {
       "level": "H2",
-      "text": "4.2 Documents and Web Sites",
-      "page": 12
+      "text": "3.2 Content",
+      "page": 9,
+      "bbox": [
+        70.944,
+        243.38371999999998,
+        150.98604,
+        257.42372
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "4. References",
+      "page": 11,
+      "bbox": [
+        70.944,
+        651.27628,
+        184.21212000000003,
+        667.2362800000001
+      ]
     },
     {
       "level": "H2",
       "text": "4.1 Trademarks",
-      "page": 12
+      "page": 11,
+      "bbox": [
+        70.944,
+        604.9937199999999,
+        176.55288000000002,
+        619.03372
+      ]
     },
     {
-      "level": "H3",
-      "text": "Reference",
-      "page": 12
-    },
-    {
-      "level": "H3",
-      "text": "Identifier",
-      "page": 12
+      "level": "H2",
+      "text": "4.2 Documents and Web Sites",
+      "page": 11,
+      "bbox": [
+        70.944,
+        518.92372,
+        267.75812400000007,
+        532.9637200000001
+      ]
     }
   ]
 }

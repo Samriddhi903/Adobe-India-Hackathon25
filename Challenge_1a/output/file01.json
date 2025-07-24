@@ -1,15 +1,4 @@
 {
   "title": "Application form for grant of LTC advance",
-  "outline": [
-    {
-      "level": "H2",
-      "text": "12. Amount of advance required.",
-      "page": 1
-    },
-    {
-      "level": "H3",
-      "text": "Signature of Government Servant. Date",
-      "page": 1
-    }
-  ]
+  "outline": []
 }

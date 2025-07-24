@@ -1,5 +1,4 @@
 import os
-import fitz  # PyMuPDF
 import json
 from extractor.heading_detector import detect_title, detect_headings
 
@@ -38,7 +37,7 @@ def extract_blocks(pdf_path):
                         is_bold = 'Bold' in font
                         blocks.append({
                             'text': line_text.strip(),
-                            'size': size,
+                            'size': round(size, 2),
                             'font': font,
                             'flags': 2 if is_bold else 0,
                             'page': page_num,
@@ -47,13 +46,24 @@ def extract_blocks(pdf_path):
     return blocks
 
 def process_pdfs(input_dir, output_dir):
+    import json
     os.makedirs(output_dir, exist_ok=True)
     pdf_files = [f for f in os.listdir(input_dir) if f.lower().endswith('.pdf')]
     for pdf_file in pdf_files:
         pdf_path = os.path.join(input_dir, pdf_file)
         blocks = extract_blocks(pdf_path)
+        print("Sample blocks extracted:")
+        print(json.dumps(blocks[:5], indent=2))
         title = detect_title(blocks)
-        outline = detect_headings(blocks, title=title)
+        print(f"TITLE: {title}")
+        font_sizes = sorted(set(b["size"] for b in blocks))
+        print("Font sizes used:", font_sizes)
+        outline = detect_headings(blocks, title=title, debug=True)
+        # Adjust page numbers by subtracting 1 before saving to JSON
+        for item in outline:
+            if 'page' in item:
+                item['page'] = item['page'] - 1
+
         output = {
             "title": title,
             "outline": outline
@@ -61,4 +71,4 @@ def process_pdfs(input_dir, output_dir):
         out_path = os.path.join(output_dir, os.path.splitext(pdf_file)[0] + ".json")
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(output, f, indent=2, ensure_ascii=False)
-        print(f"Processed {pdf_file} -> {os.path.basename(out_path)}") 
+        print(f"Processed {pdf_file} -> {os.path.basename(out_path)}")

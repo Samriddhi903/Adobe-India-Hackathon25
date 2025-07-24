@@ -1,210 +1,126 @@
 {
-  "title": "oposal quest foooor Prr Prr Prr Proposal oposal quest f RFP: Reeeequest f RFP: R oposal quest f RFP: R RFP: R",
+  "title": "oposal quest foooor Prr Prr Prr Proposal",
   "outline": [
-    {
-      "level": "H1",
-      "text": "oposal",
-      "page": 1
-    },
-    {
-      "level": "H1",
-      "text": "quest foooor Prr Prr Prr Proposal",
-      "page": 1
-    },
-    {
-      "level": "H1",
-      "text": "quest f",
-      "page": 1
-    },
-    {
-      "level": "H1",
-      "text": "RFP: Reeeequest f",
-      "page": 1
-    },
-    {
-      "level": "H1",
-      "text": "RFP: R",
-      "page": 1
-    },
-    {
-      "level": "H2",
-      "text": "March 21, 2003",
-      "page": 1
-    },
-    {
-      "level": "H2",
-      "text": "To Present a Proposal for Developing",
-      "page": 1
-    },
-    {
-      "level": "H2",
-      "text": "the Business Plan for the Ontario",
-      "page": 1
-    },
-    {
-      "level": "H2",
-      "text": "Digital Library",
-      "page": 1
-    },
     {
       "level": "H3",
       "text": "Ontario’s Libraries",
-      "page": 1
+      "page": 0,
+      "bbox": [
+        95.4406,
+        674.87688,
+        238.64329600000002,
+        713.38836
+      ]
     },
     {
       "level": "H3",
       "text": "Working Together",
-      "page": 1
+      "page": 0,
+      "bbox": [
+        95.4406,
+        674.87688,
+        238.64329600000002,
+        713.38836
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "oposal",
+      "page": 0,
+      "bbox": [
+        90.0243,
+        590.08334,
+        497.40649199999996,
+        622.37966
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "quest f",
+      "page": 0,
+      "bbox": [
+        90.0243,
+        590.08334,
+        497.40649199999996,
+        622.37966
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "RFP: Reeeequest f",
+      "page": 0,
+      "bbox": [
+        90.0243,
+        590.08334,
+        497.40649199999996,
+        622.37966
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "RFP: R",
+      "page": 0,
+      "bbox": [
+        90.0243,
+        590.08334,
+        497.40649199999996,
+        622.37966
+      ]
     },
     {
       "level": "H2",
-      "text": "Ontario’s Digital Library",
-      "page": 2
+      "text": "To Present a Proposal for Developing",
+      "page": 0,
+      "bbox": [
+        131.8006,
+        461.61599999999993,
+        482.0613999999997,
+        540.816
+      ]
     },
     {
-      "level": "H3",
-      "text": "RFP: To Develop the Ontario Digital Library Business Plan",
-      "page": 2
+      "level": "H2",
+      "text": "the Business Plan for the Ontario",
+      "page": 0,
+      "bbox": [
+        131.8006,
+        461.61599999999993,
+        482.0613999999997,
+        540.816
+      ]
     },
     {
-      "level": "H3",
-      "text": "March 2003",
-      "page": 2
-    },
-    {
-      "level": "H3",
-      "text": "April 21, 2003.",
-      "page": 2
+      "level": "H2",
+      "text": "Digital Library",
+      "page": 0,
+      "bbox": [
+        131.8006,
+        461.61599999999993,
+        482.0613999999997,
+        540.816
+      ]
     },
     {
       "level": "H3",
       "text": "A Critical Component for Implementing Ontario’s Road Map to",
-      "page": 2
+      "page": 1,
+      "bbox": [
+        90.0406,
+        635.5185399999999,
+        484.9372840000001,
+        695.20764
+      ]
     },
     {
       "level": "H3",
       "text": "Prosperity Strategy",
-      "page": 2
-    },
-    {
-      "level": "H3",
-      "text": "Shared funding:",
-      "page": 4
-    },
-    {
-      "level": "H3",
-      "text": "Shared governance structure:",
-      "page": 4
-    },
-    {
-      "level": "H3",
-      "text": "Shared decision-making and accountability:",
-      "page": 4
-    },
-    {
-      "level": "H3",
-      "text": "Equitable access for all Ontarians:",
-      "page": 4
-    },
-    {
-      "level": "H3",
-      "text": "For each Ontario student it could mean:",
-      "page": 5
-    },
-    {
-      "level": "H3",
-      "text": "Local points of entry:",
-      "page": 5
-    },
-    {
-      "level": "H3",
-      "text": "Phase III: Operating and Growing the ODL",
-      "page": 9
-    },
-    {
-      "level": "H3",
-      "text": "Phase II: Implementing and Transitioning",
-      "page": 9
-    },
-    {
-      "level": "H3",
-      "text": "Phase I: Business Planning",
-      "page": 9
-    },
-    {
-      "level": "H3",
-      "text": "that enhance local services. This multiplier means that for every dollar invested in ODL the return",
-      "page": 10
-    },
-    {
-      "level": "H3",
-      "text": "on investment is worth $2 of value for Ontario.",
-      "page": 10
-    },
-    {
-      "level": "H3",
-      "text": "represent an investment of $5.00 per citizen.",
-      "page": 10
-    },
-    {
-      "level": "H3",
-      "text": "Funding Source",
-      "page": 10
-    },
-    {
-      "level": "H3",
-      "text": "TOTAL ANNUAL",
-      "page": 10
-    },
-    {
-      "level": "H3",
-      "text": "OVERVIEW OF ODL FUNDING MODEL",
-      "page": 10
-    },
-    {
-      "level": "H3",
-      "text": "3. Membership",
-      "page": 11
-    },
-    {
-      "level": "H3",
-      "text": "2. Terms of Reference",
-      "page": 11
-    },
-    {
-      "level": "H3",
-      "text": "1. Preamble",
-      "page": 11
-    },
-    {
-      "level": "H3",
-      "text": "8. Lines of Accountability and Communication",
-      "page": 12
-    },
-    {
-      "level": "H3",
-      "text": "7. Meetings",
-      "page": 12
-    },
-    {
-      "level": "H3",
-      "text": "6. Chair",
-      "page": 12
-    },
-    {
-      "level": "H3",
-      "text": "5. Term",
-      "page": 12
-    },
-    {
-      "level": "H3",
-      "text": "4. Appointment Criteria and Process",
-      "page": 12
-    },
-    {
-      "level": "H3",
-      "text": "9. Financial and Administrative Policies",
-      "page": 13
+      "page": 1,
+      "bbox": [
+        90.0406,
+        635.5185399999999,
+        484.9372840000001,
+        695.20764
+      ]
     }
   ]
 }

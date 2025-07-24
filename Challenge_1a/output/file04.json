@@ -3,23 +3,47 @@
   "outline": [
     {
       "level": "H2",
-      "text": "DISTINCTION PATHWAY",
-      "page": 1
-    },
-    {
-      "level": "H2",
-      "text": "REGULAR PATHWAY",
-      "page": 1
-    },
-    {
-      "level": "H2",
-      "text": "PATHWAY OPTIONS",
-      "page": 1
-    },
-    {
-      "level": "H2",
       "text": "Goals:",
-      "page": 1
+      "page": 0,
+      "bbox": [
+        45.4123,
+        591.9174908922,
+        82.1082880738,
+        605.9289410922
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "PATHWAY OPTIONS",
+      "page": 0,
+      "bbox": [
+        240.1787,
+        334.76594176,
+        365.13921008,
+        350.07410176
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "REGULAR PATHWAY",
+      "page": 0,
+      "bbox": [
+        117.1803,
+        308.93525000000005,
+        242.09622179999997,
+        324.24545
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "DISTINCTION PATHWAY",
+      "page": 0,
+      "bbox": [
+        345.4298,
+        202.007507465,
+        539.2308656010001,
+        324.24545
+      ]
     }
   ]
 }

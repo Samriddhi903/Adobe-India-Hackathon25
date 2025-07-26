@@ -263,6 +263,7 @@ temp/
 *.h5
 *.hdf5
 *.model
+*.pth
 
 # Configuration files with sensitive data
 config.ini

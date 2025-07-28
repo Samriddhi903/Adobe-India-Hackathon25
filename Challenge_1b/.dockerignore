@@ -1,0 +1,42 @@
+# Python and IDE artifacts
+__pycache__/
+*.py[cod]
+*.so
+.Python
+.env/
+.venv/
+venv/
+env/
+*.egg-info/
+.ipynb_checkpoints/
+
+# Test and debug files
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Data files and outputs
+**/output/
+**/sample_dataset/
+*.json
+*.pdf
+*.csv
+*.parquet
+
+# Git and version control
+.git/
+.gitignore
+.gitmodules
+
+# Documentation
+*.md
+*.rst
+LICENSE
+NOTICE
+
+# Docker-specific
+Dockerfile*
+docker-compose*
+.dockerignore

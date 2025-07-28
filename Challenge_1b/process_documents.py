@@ -1,43 +1,58 @@
 import os
-from dotenv import load_dotenv
-
-# Load environment variables from .env file if present
-load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '.env'))
-
-# Set environment variables for model cache paths if not already set
-os.environ['TORCH_HOME'] = os.environ.get('TORCH_HOME', '/app/models/torch')
-os.environ['SENTENCE_TRANSFORMERS_HOME'] = os.environ.get('SENTENCE_TRANSFORMERS_HOME', '/app/models/sentence_transformers')
-os.environ['TRANSFORMERS_CACHE'] = os.environ.get('TRANSFORMERS_CACHE', '/app/models/huggingface/hub')
-
 import json
 import datetime
 import re
+from pathlib import Path
+
+# ========== OFFLINE CONFIGURATION ==========
+# Set these BEFORE any imports
+os.environ['TRANSFORMERS_OFFLINE'] = '1'
+os.environ['HF_DATASETS_OFFLINE'] = '1'
+os.environ['HF_EVALUATE_OFFLINE'] = '1'
+os.environ['HF_HUB_OFFLINE'] = '1'
+os.environ['TRANSFORMERS_CACHE'] = '/app/models/huggingface'
+os.environ['HF_HOME'] = '/app/models/huggingface'
+os.environ['SENTENCE_TRANSFORMERS_HOME'] = '/app/models/sentence_transformers'
+os.environ['NLTK_DATA'] = '/app/nltk_data'
+
+# ========== IMPORTS ==========
 import nltk
+nltk.data.path = ['/app/nltk_data'] + nltk.data.path
 from nltk.tokenize import sent_tokenize
 from nltk.corpus import wordnet, stopwords
+
+from transformers import pipeline, AutoTokenizer, AutoModelForSequenceClassification
 from sentence_transformers import SentenceTransformer, util
-from transformers import pipeline
 from src.inference import HeadingPredictor
 from extractor.parser import extract_blocks
 
-# Download required NLTK data
-nltk.download('punkt', quiet=True)
-nltk.download('stopwords', quiet=True)
-nltk.download('wordnet', quiet=True)
-
+# ========== DOCUMENT PROCESSOR CLASS ==========
 class DocumentProcessor:
     def __init__(self, model_path: str, embedding_model_name='all-MiniLM-L6-v2'):
-        """Initialize the document processor with ML models and configurations."""
-        self.heading_predictor = HeadingPredictor(model_path)
-        self.embedding_model = SentenceTransformer(embedding_model_name)
-        self.stopwords = set(stopwords.words('english'))
-        self.classifier = pipeline(
-            "zero-shot-classification", 
-            model="typeform/distilbert-base-uncased-mnli", 
-            device=-1,
-            model_kwargs={"cache_dir": os.environ['TRANSFORMERS_CACHE']}
-        )
-        
+        """Initialize with offline models and configurations."""
+        try:
+            # Initialize models with explicit local paths
+            self.heading_predictor = HeadingPredictor(model_path)
+            
+            self.embedding_model = SentenceTransformer(
+                '/app/models/sentence_transformers/all-MiniLM-L6-v2',
+                device='cpu'
+            )
+            
+            self.stopwords = set(stopwords.words('english'))
+            
+            # Initialize classifier pipeline with local model
+            self.classifier = pipeline(
+                "zero-shot-classification",
+                model="/app/models/huggingface",
+                tokenizer="/app/models/huggingface", 
+                device=-1,
+                framework="pt"
+            )
+            
+        except Exception as e:
+            raise RuntimeError(f"Failed to initialize offline models: {str(e)}")
+
         # Configuration parameters
         self.min_paragraph_length = 50
         self.max_sections = 10
@@ -45,7 +60,7 @@ class DocumentProcessor:
         self.similarity_threshold = 0.2
         self.line_spacing_threshold = 10
         
-        # Persona configurations
+        # Persona configurations (unchanged from original)
         self.persona_config = {
             'travel_planner': {
                 'keywords': ['itinerary', 'visit', 'hotel', 'restaurant', 'activity', 'guide', 'trip'],
@@ -64,7 +79,6 @@ class DocumentProcessor:
             }
         }
         
-        # Initialize instance variables
         self.input_data = None
         self.documents = []
         self.persona = ''
@@ -419,11 +433,10 @@ class DocumentProcessor:
 
         return output
 
-
-
+# ========== MAIN EXECUTION ==========
 def main():
-    """Main execution function."""
-    import os
+    """Main function with offline configuration."""
+    # Set paths (adjust as needed)
     base_dir = '.'
     model_path = 'models/heading_classifier.pth'
     
@@ -431,20 +444,18 @@ def main():
         # Initialize processor
         processor = DocumentProcessor(model_path)
         
-        # Identify all collection directories dynamically
-        collections = [d for d in os.listdir(base_dir) if os.path.isdir(d) and d.lower().startswith('collection')]
+        # Process collections
+        collections = [d for d in os.listdir(base_dir) 
+                      if os.path.isdir(d) and d.lower().startswith('collection')]
         
         for collection_name in collections:
             input_json_path = os.path.join(collection_name, 'challenge1b_input.json')
             pdf_dir = os.path.join(collection_name, 'PDFs')
             output_path = os.path.join(collection_name, 'generated_output.json')
             
-            print(f"Processing collection: {collection_name}")
-            print(f"Input JSON: {input_json_path}")
-            print(f"PDF directory: {pdf_dir}")
-            print(f"Output path: {output_path}")
+            print(f"Processing {collection_name}...")
             
-            # Load input and generate output
+            # Process documents
             processor.load_input(input_json_path)
             output = processor.generate_output(pdf_dir)
             
@@ -452,16 +463,11 @@ def main():
             with open(output_path, 'w', encoding='utf-8') as f:
                 json.dump(output, f, indent=2, ensure_ascii=False)
             
-            print(f"Processing completed for {collection_name}")
-            print(f"Output saved to {output_path}")
-            print(f"Extracted {len(output['extracted_sections'])} sections")
-            print(f"Generated {len(output['subsection_analysis'])} subsection analyses")
-        
+            print(f"Completed processing for {collection_name}")
+            
     except Exception as e:
         print(f"Error in main execution: {e}")
         raise
-
-
 
 if __name__ == '__main__':
     main()

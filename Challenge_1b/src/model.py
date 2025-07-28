@@ -8,8 +8,8 @@ class HeadingClassifier(nn.Module):
         super(HeadingClassifier, self).__init__()
         
         # Text encoder
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
-        self.text_encoder = AutoModel.from_pretrained(model_name)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=True, cache_dir='/app/models/huggingface/hub')
+        self.text_encoder = AutoModel.from_pretrained(model_name, local_files_only=True, cache_dir='/app/models/huggingface/hub')
         
         # Feature dimensions
         text_dim = self.text_encoder.config.hidden_size

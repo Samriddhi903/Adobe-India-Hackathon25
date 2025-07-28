@@ -1,7 +1,8 @@
-torch
-numpy
+torch==2.1.0+cpu
+numpy==1.24.4
 nltk
 sentence_transformers
 transformers
 pdfminer.six
 python-dotenv
+pandas

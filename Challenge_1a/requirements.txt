@@ -1,8 +1,4 @@
 PyMuPDF==1.23.2
 numpy
 scikit-learn
-nltk
-sentence_transformers
-torch
-transformers
 pdfminer.six

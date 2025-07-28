@@ -1,7 +1,13 @@
 import os
-os.environ['TORCH_HOME'] = 'D:/models/torch'
-os.environ['SENTENCE_TRANSFORMERS_HOME'] = 'D:/models/sentence_transformers'
-os.environ['TRANSFORMERS_CACHE'] = 'D:/models/huggingface/hub'
+from dotenv import load_dotenv
+
+# Load environment variables from .env file if present
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '.env'))
+
+# Set environment variables for model cache paths if not already set
+os.environ['TORCH_HOME'] = os.environ.get('TORCH_HOME', '/app/models/torch')
+os.environ['SENTENCE_TRANSFORMERS_HOME'] = os.environ.get('SENTENCE_TRANSFORMERS_HOME', '/app/models/sentence_transformers')
+os.environ['TRANSFORMERS_CACHE'] = os.environ.get('TRANSFORMERS_CACHE', '/app/models/huggingface/hub')
 
 import json
 import datetime
@@ -20,7 +26,7 @@ nltk.download('stopwords', quiet=True)
 nltk.download('wordnet', quiet=True)
 
 class DocumentProcessor:
-    def __init__(self, model_path: str, embedding_model_name='all-distilroberta-v1'):
+    def __init__(self, model_path: str, embedding_model_name='all-MiniLM-L6-v2'):
         """Initialize the document processor with ML models and configurations."""
         self.heading_predictor = HeadingPredictor(model_path)
         self.embedding_model = SentenceTransformer(embedding_model_name)
@@ -414,34 +420,48 @@ class DocumentProcessor:
         return output
 
 
+
 def main():
     """Main execution function."""
-    # Configuration
-    input_json_path = 'Collection 3/challenge1b_input.json'
-    pdf_dir = 'Collection 3/PDFs'
+    import os
+    base_dir = '.'
     model_path = 'models/heading_classifier.pth'
-    output_path = 'Collection 3/generated_output.json'
     
     try:
         # Initialize processor
         processor = DocumentProcessor(model_path)
         
-        # Load input and generate output
-        processor.load_input(input_json_path)
-        output = processor.generate_output(pdf_dir)
+        # Identify all collection directories dynamically
+        collections = [d for d in os.listdir(base_dir) if os.path.isdir(d) and d.lower().startswith('collection')]
         
-        # Save output
-        with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(output, f, indent=2, ensure_ascii=False)
-        
-        print(f"Processing completed successfully!")
-        print(f"Output saved to {output_path}")
-        print(f"Extracted {len(output['extracted_sections'])} sections")
-        print(f"Generated {len(output['subsection_analysis'])} subsection analyses")
+        for collection_name in collections:
+            input_json_path = os.path.join(collection_name, 'challenge1b_input.json')
+            pdf_dir = os.path.join(collection_name, 'PDFs')
+            output_path = os.path.join(collection_name, 'generated_output.json')
+            
+            print(f"Processing collection: {collection_name}")
+            print(f"Input JSON: {input_json_path}")
+            print(f"PDF directory: {pdf_dir}")
+            print(f"Output path: {output_path}")
+            
+            # Load input and generate output
+            processor.load_input(input_json_path)
+            output = processor.generate_output(pdf_dir)
+            
+            # Save output
+            with open(output_path, 'w', encoding='utf-8') as f:
+                json.dump(output, f, indent=2, ensure_ascii=False)
+            
+            print(f"Processing completed for {collection_name}")
+            print(f"Output saved to {output_path}")
+            print(f"Extracted {len(output['extracted_sections'])} sections")
+            print(f"Generated {len(output['subsection_analysis'])} subsection analyses")
         
     except Exception as e:
         print(f"Error in main execution: {e}")
         raise
+
+
 
 if __name__ == '__main__':
     main()

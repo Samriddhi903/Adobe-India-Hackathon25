@@ -1,8 +1,7 @@
-PyMuPDF==1.23.2
+torch
 numpy
-scikit-learn
 nltk
 sentence_transformers
-torch
 transformers
 pdfminer.six
+python-dotenv

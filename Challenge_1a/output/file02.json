@@ -36,17 +36,6 @@
     },
     {
       "level": "H1",
-      "text": "Acknowledgements",
-      "page": 4,
-      "bbox": [
-        70.944,
-        665.31628,
-        213.73812,
-        681.27628
-      ]
-    },
-    {
-      "level": "H1",
       "text": "1. Introduction to the Foundation Level Extensions",
       "page": 5,
       "bbox": [
@@ -131,6 +120,28 @@
         642.43372,
         215.51949600000006,
         656.4737200000001
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "3. Overview of the Foundation Level Extension – Agile Tester",
+      "page": 9,
+      "bbox": [
+        70.944,
+        654.2366800000001,
+        541.0394160000001,
+        670.3562800000001
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "Syllabus",
+      "page": 9,
+      "bbox": [
+        106.93380000000008,
+        635.9146000000001,
+        176.9662800000001,
+        651.8746000000001
       ]
     },
     {

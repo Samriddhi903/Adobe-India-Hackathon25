@@ -4,8 +4,8 @@ from pathlib import Path
 
 def process_pdfs():
     # Get input and output directories
-    input_dir = Path("/app/input")
-    output_dir = Path("/app/output")
+    input_dir = Path("/input")
+    output_dir = Path("/output")
     
     # Create output directory if it doesn't exist
     output_dir.mkdir(parents=True, exist_ok=True)

@@ -1,5 +1,5 @@
 {
-  "title": "oposal quest foooor Prr Prr Prr Proposal",
+  "title": "oposal",
   "outline": [
     {
       "level": "H3",
@@ -25,7 +25,29 @@
     },
     {
       "level": "H1",
-      "text": "oposal",
+      "text": "r Proposal",
+      "page": 0,
+      "bbox": [
+        90.0243,
+        590.08334,
+        497.40649199999996,
+        622.37966
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "r Pr",
+      "page": 0,
+      "bbox": [
+        90.0243,
+        590.08334,
+        497.40649199999996,
+        622.37966
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "quest foooor Pr",
       "page": 0,
       "bbox": [
         90.0243,

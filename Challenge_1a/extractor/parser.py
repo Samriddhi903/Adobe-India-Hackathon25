@@ -5,9 +5,17 @@ from extractor.heading_detector import detect_title, detect_headings
 def extract_blocks(pdf_path):
     from pdfminer.high_level import extract_pages
     from pdfminer.layout import LTTextContainer, LTChar
+    from pdfminer.layout import LAParams
+
+    laparams = LAParams(
+        line_overlap=0.5,
+        char_margin=1.5,
+        word_margin=0.2,
+        boxes_flow=0.7  # Critical for multi-column text
+    )
 
     blocks = []
-    for page_num, page_layout in enumerate(extract_pages(pdf_path), start=1):
+    for page_num, page_layout in enumerate(extract_pages(pdf_path, laparams=laparams), start=1):
         for element in page_layout:
             if isinstance(element, LTTextContainer):
                 for text_line in element:
@@ -54,11 +62,11 @@ def process_pdfs(input_dir, output_dir):
         blocks = extract_blocks(pdf_path)
         print("Sample blocks extracted:")
         print(json.dumps(blocks[:5], indent=2))
-        title = detect_title(blocks)
+        title, excluded_title_text = detect_title(blocks)
         print(f"TITLE: {title}")
         font_sizes = sorted(set(b["size"] for b in blocks))
         print("Font sizes used:", font_sizes)
-        outline = detect_headings(blocks, title=title, debug=True)
+        outline = detect_headings(blocks, title=title, excluded_title_text=excluded_title_text, debug=True)
         # Adjust page numbers by subtracting 1 before saving to JSON
         for item in outline:
             if 'page' in item:
@@ -69,6 +77,12 @@ def process_pdfs(input_dir, output_dir):
             "outline": outline
         }
         out_path = os.path.join(output_dir, os.path.splitext(pdf_file)[0] + ".json")
+        # Fix: sanitize filename to remove any invalid characters
+        safe_filename = "".join(c for c in os.path.splitext(pdf_file)[0] if c.isalnum() or c in (' ', '.', '_', '-')).rstrip()
+        out_path = os.path.join(output_dir, safe_filename + ".json")
+        print(f"Writing output to: {out_path}")  # Debug print for output path
+        # Ensure output directory exists for the file
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(output, f, indent=2, ensure_ascii=False)
         print(f"Processed {pdf_file} -> {os.path.basename(out_path)}")

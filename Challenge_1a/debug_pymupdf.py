@@ -17,4 +17,4 @@ def extract_with_font_sizes(pdf_path):
                 avg_size = sum(font_sizes) / len(font_sizes)
                 print(f"[{avg_size:.2f}] {text}")
 
-extract_with_font_sizes("input/file05.pdf")
+extract_with_font_sizes("input/file03.pdf")

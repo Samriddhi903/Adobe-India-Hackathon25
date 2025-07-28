@@ -1,5 +1,5 @@
 {
-  "title": "HOPE To SEE You THERE!",
+  "title": "",
   "outline": [
     {
       "level": "H2",
@@ -14,13 +14,13 @@
     },
     {
       "level": "H1",
-      "text": "WWW.TOPJUMP.COM",
+      "text": "HOPE To SEE You THERE!",
       "page": 0,
       "bbox": [
-        33.4188,
-        31.5339994,
-        306.7695501,
-        80.1249545
+        0,
+        0,
+        0,
+        0
       ]
     }
   ]

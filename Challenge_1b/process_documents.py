@@ -1,7 +1,7 @@
 import os
-os.environ['TORCH_HOME'] = 'D:/models/torch'
-os.environ['SENTENCE_TRANSFORMERS_HOME'] = 'D:/models/sentence_transformers'
-os.environ['TRANSFORMERS_CACHE'] = 'D:/models/huggingface/hub'
+os.environ['TORCH_HOME'] = 'C:/models/torch'
+os.environ['SENTENCE_TRANSFORMERS_HOME'] = 'C:/models/sentence_transformers'
+os.environ['TRANSFORMERS_CACHE'] = 'C:/models/huggingface/hub'
 import json
 import datetime
 import re
@@ -260,15 +260,15 @@ class DocumentProcessor:
         return output
 
 def main():
-    input_json_path = 'Collection 3/challenge1b_input.json'
-    pdf_dir = 'Collection 3/PDFs'
-    model_path = 'models/heading_classifier.pth'
+    input_json_path = 'Challenge_1b/Collection 1/challenge1b_input.json'
+    pdf_dir = 'Challenge_1b/Collection 1/PDFs'
+    model_path = 'Challenge_1b/models/heading_classifier.pth'
     
     processor = DocumentProcessor(model_path)
     processor.load_input(input_json_path)
     output = processor.generate_output(pdf_dir)
     
-    output_path = 'Collection 3/generated_output.json'
+    output_path = 'Challenge_1b/Collection 1/generated_output.json'
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
     

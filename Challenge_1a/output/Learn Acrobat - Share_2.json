@@ -1,0 +1,291 @@
+{
+  "title": "Add comments while viewing a PDF document",
+  "outline": [
+    {
+      "level": "H1",
+      "text": "document",
+      "page": 0,
+      "bbox": [
+        72.0,
+        656.1959999999999,
+        449.352,
+        714.444
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "Annotations and drawing markup tools",
+      "page": 1,
+      "bbox": [
+        72.0,
+        536.292,
+        483.65519999999987,
+        590.064
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "overview",
+      "page": 1,
+      "bbox": [
+        72.0,
+        536.292,
+        483.65519999999987,
+        590.064
+      ]
+    },
+    {
+      "level": "H2",
+      "text": "Show annotations and drawing markup tools",
+      "page": 1,
+      "bbox": [
+        72.0,
+        254.808,
+        386.424,
+        272.808
+      ]
+    },
+    {
+      "level": "H2",
+      "text": "Select an annotation or drawing markup tool",
+      "page": 2,
+      "bbox": [
+        72.0,
+        243.288,
+        386.544,
+        274.55303999999995
+      ]
+    },
+    {
+      "level": "H2",
+      "text": "Keep an annotation tool selected",
+      "page": 3,
+      "bbox": [
+        72.0,
+        333.108,
+        305.18399999999997,
+        351.108
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "Add a comment",
+      "page": 4,
+      "bbox": [
+        72.0,
+        674.532,
+        243.39600000000004,
+        698.724
+      ]
+    },
+    {
+      "level": "H2",
+      "text": "Steps to add a comment",
+      "page": 4,
+      "bbox": [
+        72.0,
+        330.82800000000003,
+        364.57638000000003,
+        362.15304
+      ]
+    },
+    {
+      "level": "H2",
+      "text": "Edit a comment",
+      "page": 4,
+      "bbox": [
+        72.0,
+        158.388,
+        185.12400000000002,
+        176.388
+      ]
+    },
+    {
+      "level": "H2",
+      "text": "Change font size of annotation comments",
+      "page": 5,
+      "bbox": [
+        72.0,
+        680.5711200000001,
+        362.87514,
+        696.59112
+      ]
+    },
+    {
+      "level": "H2",
+      "text": "Copy partial text in a comment",
+      "page": 5,
+      "bbox": [
+        72.0,
+        506.688,
+        289.284,
+        524.688
+      ]
+    },
+    {
+      "level": "H2",
+      "text": "Delete a comment",
+      "page": 5,
+      "bbox": [
+        72.0,
+        415.73112,
+        203.09166,
+        431.75112
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "Add a text comment",
+      "page": 6,
+      "bbox": [
+        72.0,
+        674.532,
+        288.792,
+        698.724
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "Add reactions to comments on shared files",
+      "page": 7,
+      "bbox": [
+        72.0,
+        674.532,
+        518.364,
+        698.724
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "Add an arrow, or shape",
+      "page": 8,
+      "bbox": [
+        72.0,
+        674.532,
+        319.296,
+        698.724
+      ]
+    },
+    {
+      "level": "H2",
+      "text": "Add a line",
+      "page": 9,
+      "bbox": [
+        72.0,
+        230.27112,
+        149.28047999999998,
+        246.29112
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "Group and ungroup markups",
+      "page": 10,
+      "bbox": [
+        72.0,
+        674.532,
+        378.696,
+        698.724
+      ]
+    },
+    {
+      "level": "H2",
+      "text": "Group markups",
+      "page": 10,
+      "bbox": [
+        72.0,
+        537.588,
+        184.22400000000002,
+        555.588
+      ]
+    },
+    {
+      "level": "H2",
+      "text": "Ungroup markups",
+      "page": 10,
+      "bbox": [
+        72.0,
+        443.93111999999996,
+        201.23334,
+        459.95111999999995
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "Add comments in a text box or callout",
+      "page": 11,
+      "bbox": [
+        72.0,
+        674.532,
+        472.70399999999995,
+        698.724
+      ]
+    },
+    {
+      "level": "H2",
+      "text": "Add a comment in text box",
+      "page": 11,
+      "bbox": [
+        72.0,
+        289.128,
+        263.484,
+        307.128
+      ]
+    },
+    {
+      "level": "H2",
+      "text": "Set or change properties for the text box",
+      "page": 11,
+      "bbox": [
+        72.0,
+        172.85111999999998,
+        354.46464,
+        188.87112
+      ]
+    },
+    {
+      "level": "H2",
+      "text": "Add a comment in callout",
+      "page": 12,
+      "bbox": [
+        72.0,
+        503.868,
+        254.304,
+        521.8679999999999
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "Add comments in a file attachment",
+      "page": 13,
+      "bbox": [
+        72.0,
+        674.532,
+        439.65599999999995,
+        698.724
+      ]
+    },
+    {
+      "level": "H1",
+      "text": "Commenting preferences",
+      "page": 14,
+      "bbox": [
+        72.0,
+        674.532,
+        340.4039999999999,
+        698.724
+      ]
+    },
+    {
+      "level": "H2",
+      "text": "Viewing comments",
+      "page": 14,
+      "bbox": [
+        72.0,
+        495.89112,
+        208.25009999999997,
+        511.91112
+      ]
+    }
+  ]
+}

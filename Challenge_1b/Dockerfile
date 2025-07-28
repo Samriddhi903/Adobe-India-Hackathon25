@@ -1,23 +1,16 @@
 FROM python:3.10-slim
 
 # Set working directory
-WORKDIR /app/Challenge_1b
+WORKDIR /app
 
-# Copy requirements.txt for dependencies
-COPY requirements.txt /app/requirements.txt
+# Copy requirements first to leverage Docker cache
+COPY requirements.txt .
 
-# Install dependencies (assumes offline build with cached packages or local wheelhouse)
-RUN pip install --no-cache-dir -r /app/requirements.txt
+# Install dependencies including CPU PyTorch
+RUN pip install -r requirements.txt
 
-# Copy Challenge_1b project files including models and collections
-COPY . /app/Challenge_1b
+# Copy application code
+COPY . .
 
-# Set environment variables for model cache paths inside container
-ENV TORCH_HOME=/app/models/torch
-ENV SENTENCE_TRANSFORMERS_HOME=/app/models/sentence_transformers
-ENV TRANSFORMERS_CACHE=/app/models/huggingface/hub
-
-# Expose any ports if needed (not specified here)
-
-# Default command to run the main processing script
+# Command to run the application
 CMD ["python", "process_documents.py"]
